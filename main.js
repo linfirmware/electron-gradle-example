@@ -20,6 +20,11 @@ function createWindow () {
 	// Open the DevTools.
 	mainWindow.webContents.openDevTools();
 
+	var java = require( 'java' );
+	var sys = java.import('java.lang.System');
+
+	sys.out.printlnSync('Hello from java :)'); // outputs to terminal
+
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function() {
 		// Dereference the window object, usually you would store windows
