@@ -1,0 +1,29 @@
+{
+	"name": "electron-gradle-example",
+	"version": "1.1.1",
+	"description": "Application to prove the viability of dynamically creating and running Gradle build scripts using Electron, Javascript, and Node.js",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron main.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "http://linfirmware.com/"
+	},
+	"keywords": [
+		"Electron",
+		"Gradle",
+		"build",
+		"tooling",
+		"project"
+	],
+	"author": "Lin Firmware (Wesley Carlsen)",
+	"license": "MIT",
+	"bugs": {
+		"url": "http://linfirmware.com/"
+	},
+	"homepage": "http://linfirmware.com/",
+	"devDependencies": {
+		"electron-prebuilt": "^0.36.11"
+	}
+}
