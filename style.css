@@ -4,8 +4,28 @@ html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
+	font-family: 'Arial', 'sans-serif';
 }
 
 body {
 	background: radial-gradient(#F6FFE0 , #E2F0D6);
+}
+
+#dashboard {
+	padding: 20px;
+}
+
+#console {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 40%;
+	background: #10222B;
+	color: #eee;
+	padding: 20px;
+}
+
+#console p {
+	margin: 0;
 }
