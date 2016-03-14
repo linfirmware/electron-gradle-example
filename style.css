@@ -1,0 +1,11 @@
+/* Main window styling */
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+}
+
+body {
+	background: radial-gradient(#F6FFE0 , #E2F0D6);
+}
