@@ -20,10 +20,43 @@ function createWindow () {
 	// Open the DevTools.
 	mainWindow.webContents.openDevTools();
 
-	var java = require( 'java' );
-	var sys = java.import('java.lang.System');
+	const spawn = require('child_process').spawn;
+	const ls = spawn('ls', ['-lh', '/usr']);
 
-	sys.out.printlnSync('Hello from java :)'); // outputs to terminal
+	ls.stdout.on('data', (data) => {
+	  console.log(`stdout: ${data}`);
+	});
+
+	ls.stderr.on('data', (data) => {
+	  console.log(`stderr: ${data}`);
+	});
+
+	ls.on('close', (code) => {
+	  console.log(`child process exited with code ${code}`);
+	});
+
+	/*var java = require('java');
+
+	java.classpath.push('lib/gradle-tooling-api-2.11.jar');
+
+	var system = java.import('java.lang.System');
+	java.import('org.gradle.tooling.GradleConnector');
+	java.import('org.gradle.tooling.ProjectConnection');
+	java.import('org.gradle.tooling.model.GradleProject');
+	java.import('org.gradle.tooling.model.GradleTask');
+
+	java.callStaticMethod("org.gradle.tooling.GradleConnector", "newConnector", function(err, results) {
+	  if(err) { console.error(err); return; }
+	  console.log(results);
+	});*/
+
+	/*ProjectConnection connection = GradleConnector.newConnector().forProjectDirectory(new File("someProjectFolder")).connect();
+
+	try {
+	   connection.newBuild().forTasks("tasks").run();
+	} finally {
+	   connection.close();
+	}*/
 
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function() {
