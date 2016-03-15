@@ -20,21 +20,6 @@ function createWindow () {
 	// Open the DevTools.
 	mainWindow.webContents.openDevTools();
 
-	const spawn = require('child_process').spawn;
-	const ls = spawn('./gradlew', ['-v']);
-
-	ls.stdout.on('data', (data) => {
-	  console.log(`stdout: ${data}`);
-	});
-
-	ls.stderr.on('data', (data) => {
-	  console.log(`stderr: ${data}`);
-	});
-
-	ls.on('close', (code) => {
-	  console.log(`child process exited with code ${code}`);
-	});
-
 	/*var java = require('java');
 
 	java.classpath.push('lib/gradle-tooling-api-2.11.jar');
