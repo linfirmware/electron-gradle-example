@@ -7,16 +7,17 @@
 		<script src="dashboardViewController.js"></script>
 	</head>
 	<body>
-		<div id="dashboard">
-			<h2>CLI Commands</h2>
-			<button onclick="versionInfo();" class="flat-button" type="button">Gradle Version</button>
-			<button onclick="viewTasks();" class="flat-button" type="button">Gradle List Tasks</button>
-			<button onclick="executeBuild();" class="flat-button" type="button">Execute Build Script</button>
-			<h2>Node Java Commands</h2>
-			<button onclick="javaGradleToolingTest();" class="flat-button" type="button">Gradle Tooling API Test</button>
-			<h2>CLI Commands</h2>
-			<button onclick="clearVirtualConsole();" class="flat-button" type="button">Clear Virtual Console</button>
+		<div>
+			<h1>Node.js Child Processes</h1>
+			<p>Example explanation text here. Goes on and one. <a target="_blank" href="http://nodejs.org/">Node.js Child Processes Documentation</a></p>
+			<button onclick="wrapperVersion(event);">Gradle Wrapper Version</button>
+			<button onclick="wrapperListTasks(event);">Gradle Wrapper List Tasks (Current Directory)</button>
+			<button onclick="wrapperExecuteBuild(event);">Gradle Wrapper Execute Task (hello)</button>
 		</div>
-		<div id="console"></div>
+		<div>
+			<h1>Node.js Java Plugin (Gradle Tooling API)</h1>
+			<p>Example explanation text here. Goes on and one. <a target="_blank" href="http://gradle.org/">Node.js Java Plugin Documentation</a></p>
+			<button onclick="javaPluginListTasks(event);">Gradle Wrapper List Tasks (Current Directory)</button>
+		</div>
 	</body>
 </html>

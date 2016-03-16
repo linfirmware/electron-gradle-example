@@ -1,10 +1,11 @@
-function executeBuild() {
+function wrapperVersion(e) {
 	const spawn = require('child_process').spawn;
-	const ls = spawn('./gradlew', ['hello']);
+	const proc = spawn('./gradlew', ['-v']);
 
-	ls.stdout.on('data', (data) => {
+	proc.stdout.on('data', (data) => {
+		console.log(`${data}`);
 
-		data += "";
+		/*data += "";
 		data = data.replace(/\r\n/g, "<br />");
 		data = data.replace(/\n/g, "<br />");
 
@@ -12,18 +13,18 @@ function executeBuild() {
 		paragraph.innerHTML = data;
 
 		var element = document.getElementById("console");
-		element.appendChild(paragraph);
+		element.appendChild(paragraph);*/
 	});
-
 }
 
-function viewTasks() {
+function wrapperListTasks(e) {
 	const spawn = require('child_process').spawn;
-	const ls = spawn('./gradlew', ['tasks']);
+	const proc = spawn('./gradlew', ['tasks']);
 
-	ls.stdout.on('data', (data) => {
+	proc.stdout.on('data', (data) => {
+		console.log(`${data}`);
 
-		data += "";
+		/*data += "";
 		data = data.replace(/\r\n/g, "<br />");
 		data = data.replace(/\n/g, "<br />");
 
@@ -31,18 +32,18 @@ function viewTasks() {
 		paragraph.innerHTML = data;
 
 		var element = document.getElementById("console");
-		element.appendChild(paragraph);
+		element.appendChild(paragraph);*/
 	});
-
 }
 
-function versionInfo() {
+function wrapperExecuteBuild(e) {
 	const spawn = require('child_process').spawn;
-	const ls = spawn('./gradlew', ['-v']);
+	const proc = spawn('./gradlew', ['hello']);
 
-	ls.stdout.on('data', (data) => {
+	proc.stdout.on('data', (data) => {
+		console.log(`${data}`);
 
-		data += "";
+		/*data += "";
 		data = data.replace(/\r\n/g, "<br />");
 		data = data.replace(/\n/g, "<br />");
 
@@ -50,17 +51,11 @@ function versionInfo() {
 		paragraph.innerHTML = data;
 
 		var element = document.getElementById("console");
-		element.appendChild(paragraph);
+		element.appendChild(paragraph);*/
 	});
-
 }
 
-function clearVirtualConsole() {
-	var element = document.getElementById("console");
-	element.innerHTML = '';
-}
-
-function javaGradleToolingTest() {
+function javaPluginListTasks(e) {
 	var java = require('java');
 
 	var filesystem = require("fs");
@@ -89,8 +84,4 @@ function javaGradleToolingTest() {
 	java.callMethodSync(buildLauncher, "run");
 
 	java.callMethodSync(connection, "close");
-
-	//var project = java.callMethodSync(connection, "getModel", java.getStaticFieldValue("org.gradle.tooling.model.GradleProject", "class"));
-
-	//console.log(project);
 }
