@@ -20,37 +20,6 @@ function createWindow () {
 	// Open the DevTools.
 	mainWindow.webContents.openDevTools();
 
-	/*var java = require('java');
-	var mvn = require('node-java-maven');
-
-	mvn(function(err, mvnResults) {
-	  if (err) {
-	    return console.error('could not resolve maven dependencies', err);
-	  }
-	  mvnResults.classpath.forEach(function(c) {
-	    console.log('adding ' + c + ' to classpath');
-	    java.classpath.push(c);
-	  });
-
-	  var Version = java.import('org.apache.lucene.util.Version');
-	});
-
-	var system = java.import('java.lang.System');
-	java.import('org.gradle.tooling.GradleConnector');
-
-	java.callStaticMethod("org.gradle.tooling.GradleConnector", "newConnector", function(err, results) {
-	  if(err) { console.error(err); return; }
-	  console.log(results);
-	});*/
-
-	/*ProjectConnection connection = GradleConnector.newConnector().forProjectDirectory(new File("someProjectFolder")).connect();
-
-	try {
-	   connection.newBuild().forTasks("tasks").run();
-	} finally {
-	   connection.close();
-	}*/
-
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function() {
 		// Dereference the window object, usually you would store windows
