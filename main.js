@@ -21,14 +21,22 @@ function createWindow () {
 	mainWindow.webContents.openDevTools();
 
 	/*var java = require('java');
+	var mvn = require('node-java-maven');
 
-	java.classpath.push('lib/gradle-tooling-api-2.11.jar');
+	mvn(function(err, mvnResults) {
+	  if (err) {
+	    return console.error('could not resolve maven dependencies', err);
+	  }
+	  mvnResults.classpath.forEach(function(c) {
+	    console.log('adding ' + c + ' to classpath');
+	    java.classpath.push(c);
+	  });
+
+	  var Version = java.import('org.apache.lucene.util.Version');
+	});
 
 	var system = java.import('java.lang.System');
 	java.import('org.gradle.tooling.GradleConnector');
-	java.import('org.gradle.tooling.ProjectConnection');
-	java.import('org.gradle.tooling.model.GradleProject');
-	java.import('org.gradle.tooling.model.GradleTask');
 
 	java.callStaticMethod("org.gradle.tooling.GradleConnector", "newConnector", function(err, results) {
 	  if(err) { console.error(err); return; }
