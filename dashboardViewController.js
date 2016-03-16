@@ -72,9 +72,25 @@ function javaGradleToolingTest() {
 
 	var system = java.import('java.lang.System');
 	java.import('org.gradle.tooling.GradleConnector');
+	java.import('org.gradle.tooling.ProjectConnection');
+	java.import('org.gradle.tooling.model.GradleProject');
+	java.import('org.gradle.tooling.model.GradleTask');
+	java.import('org.gradle.tooling.model.Task');
 
-	java.callStaticMethod("org.gradle.tooling.GradleConnector", "newConnector", function(err, results) {
-	  if(err) { console.error(err); return; }
-	  console.log(results);
-	});
+	var filePath = java.newInstanceSync("java.io.File", ".");
+
+	var connector = java.callStaticMethodSync("org.gradle.tooling.GradleConnector", "newConnector");
+	java.callMethodSync(connector, "forProjectDirectory", filePath);
+	var connection = java.callMethodSync(connector, "connect");
+
+	var buildLauncher = java.callMethodSync(connection, "newBuild");
+	java.callMethodSync(buildLauncher, "forTasks", "tasks");
+	java.callMethodSync(buildLauncher, "setStandardOutput", java.getStaticFieldValue("java.lang.System", "out"));
+	java.callMethodSync(buildLauncher, "run");
+
+	java.callMethodSync(connection, "close");
+
+	//var project = java.callMethodSync(connection, "getModel", java.getStaticFieldValue("org.gradle.tooling.model.GradleProject", "class"));
+
+	//console.log(project);
 }
