@@ -1,75 +1,133 @@
 /* Main window styling */
 
+/* roboto-100 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: url('fonts/roboto-v15-latin-100.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Thin'), local('Roboto-Thin'),
+       url('fonts/roboto-v15-latin-100.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v15-latin-100.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v15-latin-100.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v15-latin-100.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v15-latin-100.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-300 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/roboto-v15-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Light'), local('Roboto-Light'),
+       url('fonts/roboto-v15-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v15-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v15-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v15-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v15-latin-300.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-regular - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/roboto-v15-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Roboto'), local('Roboto-Regular'),
+       url('fonts/roboto-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v15-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-500 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/roboto-v15-latin-500.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+       url('fonts/roboto-v15-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v15-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v15-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v15-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v15-latin-500.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-700 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/roboto-v15-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+       url('fonts/roboto-v15-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v15-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v15-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v15-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v15-latin-700.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+/* roboto-900 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  src: url('fonts/roboto-v15-latin-900.eot'); /* IE9 Compat Modes */
+  src: local('Roboto Black'), local('Roboto-Black'),
+       url('fonts/roboto-v15-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/roboto-v15-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/roboto-v15-latin-900.woff') format('woff'), /* Modern Browsers */
+       url('fonts/roboto-v15-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('fonts/roboto-v15-latin-900.svg#Roboto') format('svg'); /* Legacy iOS */
+}
+
 html, body {
 	height: 100%;
 	width: 100%;
 	margin: 0;
-	font-family: 'Arial', 'sans-serif';
+	font-family: 'Roboto', 'sans-serif';
+	font-weight: 400;
+	color: #10222B;
 }
 
 body {
 	background: radial-gradient(#F6FFE0 , #E2F0D6);
 }
 
-#dashboard {
+div {
 	padding: 20px;
 }
 
-#console {
-	position: absolute;
-	overflow: auto;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	height: 40%;
-	background: #10222B;
-	color: #eee;
-	padding: 20px;
-}
-
-#console p {
+h1 {
 	margin: 0;
+	padding: 0;
+	font-weight: 100;
 }
 
-.flat-button {
-	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
-	box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #f6f6f6));
-	background:-moz-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:-webkit-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:-o-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:-ms-linear-gradient(top, #ffffff 5%, #f6f6f6 100%);
-	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0);
-	background-color:#ffffff;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #dcdcdc;
-	display:inline-block;
-	cursor:pointer;
-	color:#666666;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffffff;
-	outline: 0;
-}
-.flat-button:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f6f6f6), color-stop(1, #ffffff));
-	background:-moz-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-	background:-webkit-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-	background:-o-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-	background:-ms-linear-gradient(top, #f6f6f6 5%, #ffffff 100%);
-	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f6f6f6', endColorstr='#ffffff',GradientType=0);
-	background-color:#f6f6f6;
-}
-.flat-button:active {
-	position:relative;
-	top:1px;
+a {
+	color: #6496c8;
 }
 
+button {
+  display: inline-block;
+  margin: 0 10px 20px 0;
+  padding: 10px 20px;
+  font-size: 14px;
+  appearance: none;
+  color: #fff;
+  background-color: #6496c8;
+  border: none;
+  border-radius: 0px;
+  box-shadow: 0 5px #27496d;
+}
+
+button:focus {
+  outline: none
+}
+
+button:hover {
+  background-color: #417cb8
+}
+
+button:active {
+  box-shadow: 0 2px #27496d;
+  transform: translateY(3px);
+}
