@@ -8,10 +8,15 @@
 	</head>
 	<body>
 		<div id="dashboard">
+			<h2>CLI Commands</h2>
+			<button onclick="versionInfo();" class="flat-button" type="button">Gradle Version</button>
+			<button onclick="viewTasks();" class="flat-button" type="button">Gradle List Tasks</button>
 			<button onclick="executeBuild();" class="flat-button" type="button">Execute Build Script</button>
+			<h2>Node Java Commands</h2>
+			
+			<h2>CLI Commands</h2>
+			<button onclick="clearVirtualConsole();" class="flat-button" type="button">Clear Virtual Console</button>
 		</div>
-		<div id="console">
-			<p>> Example console output</p>
-		</div>
+		<div id="console"></div>
 	</body>
 </html>
