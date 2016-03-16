@@ -62,20 +62,13 @@ function clearVirtualConsole() {
 
 function javaGradleToolingTest() {
 	var java = require('java');
-	/*var mvn = require('node-java-maven');
 
-	mvn(function(err, mvnResults) {
-	  if (err) {
-	    return console.error('could not resolve maven dependencies', err);
-	  }
-	  mvnResults.classpath.forEach(function(c) {
-	    console.log('adding ' + c + ' to classpath');
-	    java.classpath.push(c);
-	  });
-	});*/
+	var filesystem = require("fs");
 
-	java.classpath.push('lib/gradle-tooling-api-2.11.jar');
-	java.classpath.push('lib/slf4j-api-1.7.10.jar');
+    filesystem.readdirSync('lib').forEach(function(file) {
+        file = 'lib/'+file;
+        java.classpath.push(file);
+    });
 
 	var system = java.import('java.lang.System');
 	java.import('org.gradle.tooling.GradleConnector');
