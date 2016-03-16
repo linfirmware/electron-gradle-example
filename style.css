@@ -17,6 +17,7 @@ body {
 
 #console {
 	position: absolute;
+	overflow: auto;
 	bottom: 0;
 	left: 0;
 	right: 0;
