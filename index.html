@@ -3,11 +3,23 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Electron Gradle Example</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="dashboardViewController.js"></script>
 	</head>
 	<body>
-		<h1>Electron Gradle Example</h1>
-		We are using node <script>document.write(process.versions.node)</script>,
-		Chrome <script>document.write(process.versions.chrome)</script>,
-		and Electron <script>document.write(process.versions.electron)</script>.
+		<div>
+			<h1>Node.js Child Processes</h1>
+			<p>The child_process module provides the ability to spawn child processes in a manner that is similar, but not identical, to popen(3). This capability is primarily provided by the child_process.spawn() function: <a target="_blank" href="https://nodejs.org/api/child_process.html">Node.js Child Processes Documentation</a></p>
+			<p>Output from these functions is directed to the JavaScript console and can be seen using the developer tools pane on the right.</p>
+			<button onclick="wrapperVersion(event);">Gradle Wrapper Version</button>
+			<button onclick="wrapperListTasks(event);">Gradle Wrapper List Tasks (Current Directory)</button>
+			<button onclick="wrapperExecuteBuild(event);">Gradle Wrapper Execute Task (hello)</button>
+		</div>
+		<div>
+			<h1>Node.js Java Plugin (Gradle Tooling API)</h1>
+			<p>Bridge API to connect with existing Java APIs. <a target="_blank" href="https://www.npmjs.com/package/java">Node.js Java Plugin Documentation</a>, A GradleConnector is the main entry point to the Gradle tooling API. You use this API as follows: <a target="_blank" href="https://docs.gradle.org/current/javadoc/org/gradle/tooling/GradleConnector.html">Gradle Tooling API Documentation</a></p>
+			<p>Output from these functions is directed to System.out and will be visible in the same terminal window you used to start this electron application.</p>
+			<button onclick="javaPluginListTasks(event);">Gradle Wrapper List Tasks (Current Directory)</button>
+		</div>
 	</body>
 </html>

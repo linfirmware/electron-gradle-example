@@ -4,11 +4,11 @@
 	"description": "Application to prove the viability of dynamically creating and running Gradle build scripts using Electron, Javascript, and Node.js",
 	"main": "main.js",
 	"scripts": {
-		"start": "electron main.js"
+		"start": "./node_modules/.bin/electron-rebuild && electron main.js"
 	},
 	"repository": {
 		"type": "git",
-		"url": "http://linfirmware.com/"
+		"url": "git+https://github.com/linfirmware/electron-gradle-example.git"
 	},
 	"keywords": [
 		"Electron",
@@ -17,13 +17,15 @@
 		"tooling",
 		"project"
 	],
-	"author": "Lin Firmware (Wesley Carlsen)",
+	"author": "Lin Firmware, Wesley Carlsen, Red Pill Analytics",
 	"license": "MIT",
 	"bugs": {
-		"url": "http://linfirmware.com/"
+		"url": "https://github.com/linfirmware/electron-gradle-example/issues"
 	},
-	"homepage": "http://linfirmware.com/",
+	"homepage": "https://github.com/linfirmware/electron-gradle-example#readme",
 	"devDependencies": {
-		"electron-prebuilt": "^0.36.11"
+		"electron-prebuilt": "^0.36.11",
+		"electron-rebuild": "^1.1.3",
+		"java": "^0.6.1"
 	}
 }
